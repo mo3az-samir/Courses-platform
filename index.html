@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اتعلم ببساطة</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background: #35424a;
+            color: #ffffff;
+            padding: 20px 0;
+        }
+
+        nav {
+            margin-bottom: 10px;
+            background-color: transparent;
+        }
+
+        nav .navbar-brand {
+            font-size: 2rem;
+            color: #007bff;
+        }
+
+        nav .nav-link {
+            color: #007bff;
+            font-size: 1.2rem;
+            transition: color 0.3s, background-color 0.3s;
+            padding: 10px 15px;
+            border-radius: 5px;
+        }
+
+        nav .nav-link:hover {
+            color: #ffffff;
+            background-color: #007bff;
+        }
+
+        section {
+            padding: 20px;
+            margin: 10px 0;
+            background: #ffffff;
+            border-radius: 5px;
+            transition: transform 0.3s;
+        }
+
+        section:hover {
+            transform: scale(1.02);
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            background: #35424a;
+            color: #ffffff;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .feature-card {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 20px;
+            text-align: center;
+            margin-bottom: 20px;
+            transition: transform 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: scale(1.05);
+        }
+
+        .feature-icon {
+            font-size: 50px;
+            color: #28a745;
+        }
+
+        .spacer {
+            height: 50px;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .contact-section {
+            background-color: #353535;
+            color: white;
+            padding: 30px;
+            border-radius: 5px;
+        }
+
+        .contact-section a {
+            color: #007bff;
+        }
+
+        .social-icons {
+            margin-top: 20px;
+        }
+
+        .social-icons a {
+            color: white;
+            margin: 0 10px;
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+    <header class="bg-primary text-white text-center p-4">
+        <h1 id="main-title">اتعلم ببساطة</h1>
+        <p>تعلم البرمجة بسهولة ويسر</p>
+    </header>
+
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <a class="navbar-brand" href="#"><i class="fas fa-graduation-cap"></i></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">الدورات</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#payment">طرق الدفع</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#features">مميزات الدورة</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">تواصل معنا</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" data-toggle="modal" data-target="#loginModal">تسجيل الدخول</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <section>
+            <h2 class="text-center" style="font-size: 2.5rem;">نبذة تعريفية عن الكورسات</h2>
+            <p class="text-center" style="font-size: 1.2rem;">نقدم لك مجموعة من الدورات التعليمية التي تساعدك على تعلم البرمجة من الصفر. سواء كنت مبتدئًا أو لديك خبرة سابقة، ستجد ما يناسبك هنا.</p>
+        </section>
+
+        <section>
+            <h2>الدورات المتاحة</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <i class="fas fa-code fa-2x"></i>
+                            <h5 class="card-title">دورة HTML</h5>
+                            <p class="card-text">تعلم أساسيات HTML.</p>
+                            <button class="btn btn-primary" onclick="startCourse('HTML')">ابدأ الآن</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <i class="fas fa-paint-brush fa-2x"></i>
+                            <h5 class="card-title">دورة CSS</h5>
+                            <p class="card-text">تعلم تصميم الصفحات باستخدام CSS.</p>
+                            <button class="btn btn-primary" onclick="startCourse('CSS')">ابدأ الآن</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <i class="fas fa-laptop-code fa-2x"></i>
+                            <h5 class="card-title">دورة JavaScript</h5>
+                            <p class="card-text">تعلم البرمجة باستخدام JavaScript.</p>
+                            <button class="btn btn-primary" onclick="startCourse('JavaScript')">ابدأ الآن</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="spacer"></div>
+
+        <section id="features" class="text-center">
+            <h2><i class="fas fa-star feature-icon"></i> مميزات الدورة</h2>
+            <div class="row justify-content-center">
+                <div class="col-md-4">
+                    <div class="feature-card">
+                        <i class="fas fa-chalkboard-teacher feature-icon"></i>
+                        <h5>مدربون محترفون</h5>
+                        <p>تدريب على يد مدربين ذوي خبرة في المجال.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-card">
+                        <i class="fas fa-book-open feature-icon"></i>
+                        <h5>محتوى تعليمي شامل</h5>
+                        <p>محتوى شامل يغطي جميع جوانب الدورة.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-card">
+                        <i class="fas fa-certificate feature-icon"></i>
+                        <h5>شهادة معتمدة</h5>
+                        <p>شهادة معتمدة بعد إتمام الدورة بنجاح.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-card">
+                        <i class="fas fa-comments feature-icon"></i>
+                        <h5>دعم فني مستمر</h5>
+                        <p>دعم فني متواصل للطلاب خلال فترة الدورة.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-card">
+                        <i class="fas fa-clock feature-icon"></i>
+                        <h5>مرونة في التعلم</h5>
+                        <p>تعلم في الوقت الذي يناسبك.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-card">
+                        <i class="fas fa-users feature-icon"></i>
+                        <h5>مجتمع نشط</h5>
+                        <p>انضم إلى مجتمع من المتعلمين وتبادل المعرفة.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="spacer"></div>
+
+        <section id="payment" class="text-center">
+            <h2><i class="fas fa-wallet feature-icon"></i> طرق الدفع المتاحة</h2>
+            <div class="row justify-content-center">
+                <div class="col-md-4">
+                    <div class="feature-card">
+                        <a href="#" data-toggle="modal" data-target="#visaModal">
+                            <i class="fas fa-credit-card feature-icon"></i>
+                            <h5>فيزا</h5>
+                            <p>يمكنك الدفع باستخدام بطاقة الفيزا الخاصة بك.</p>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-card">
+                        <a href="#" data-toggle="modal" data-target="#bankTransferModal">
+                            <i class="fas fa-university feature-icon"></i>
+                            <h5>تحويل بنكي</h5>
+                            <p>يمكنك إجراء تحويل بنكي إلى حسابنا.</p>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-card">
+                        <a href="#" data-toggle="modal" data-target="#cashModal">
+                            <i class="fas fa-money-bill-alt feature-icon"></i>
+                            <h5>كاش</h5>
+                            <p>يمكنك الدفع نقدًا عند استلام الدورة.</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="spacer"></div>
+
+        <!-- قسم تواصل معنا -->
+        <section id="contact" class="contact-section">
+            <h2 class="text-center">تواصل معنا</h2>
+            <p class="text-center">للاستفسار عن طرق الدفع</p>
+            <p class="text-center">Email: <a href="mailto:contact@learnsimply.com">contact@learnsimply.com</a></p>
+            <div class="social-icons text-center">
+                <a href="https://wa.me/yourwhatsapplink" target="_blank" title="واتساب"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://www.linkedin.com/in/yourlinkedinprofile" target="_blank" title="لينكدإن"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </section>
+
+    </div>
+
+    <footer class="bg-dark text-white text-center p-3">
+        <p>حقوق الطبع والنشر &copy; 2025 اتعلم ببساطة</p>
+    </footer>
+
+    <!-- نافذة تسجيل الدخول -->
+    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="loginModalLabel">تسجيل الدخول</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="loginForm">
+                        <div class="form-group">
+                            <label for="email">البريد الإلكتروني</label>
+                            <input type="email" class="form-control" id="email" placeholder="أدخل بريدك الإلكتروني" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">كلمة المرور</label>
+                            <input type="password" class="form-control" id="password" placeholder="أدخل كلمة المرور" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">تسجيل الدخول</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- نافذة إدخال بيانات الفيزا -->
+    <div class="modal fade" id="visaModal" tabindex="-1" role="dialog" aria-labelledby="visaModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="visaModalLabel">إدخال بيانات الفيزا</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="visaForm">
+                        <div class="form-group">
+                            <label for="cardNumber">رقم البطاقة</label>
+                            <input type="text" class="form-control" id="cardNumber" placeholder="أدخل رقم البطاقة" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="expiryDate">تاريخ الانتهاء (MM/YY)</label>
+                            <input type="text" class="form-control" id="expiryDate" placeholder="أدخل تاريخ الانتهاء" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="cvv">CVV</label>
+                            <input type="text" class="form-control" id="cvv" placeholder="أدخل CVV" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">إرسال</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- نافذة إدخال بيانات التحويل البنكي -->
+    <div class="modal fade" id="bankTransferModal" tabindex="-1" role="dialog" aria-labelledby="bankTransferModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="bankTransferModalLabel">إدخال بيانات التحويل البنكي</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="bankTransferForm">
+                        <div class="form-group">
+                            <label for="accountNumber">رقم الحساب</label>
+                            <input type="text" class="form-control" id="accountNumber" placeholder="أدخل رقم الحساب" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">إرسال</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- نافذة إدخال بيانات فودافون كاش -->
+    <div class="modal fade" id="cashModal" tabindex="-1" role="dialog" aria-labelledby="cashModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="cashModalLabel">إدخال بيانات فودافون كاش</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="cashForm">
+                        <div class="form-group">
+                            <label for="vodafoneCashNumber">رقم فودافون كاش</label>
+                            <input type="text" class="form-control" id="vodafoneCashNumber" placeholder="أدخل رقم فودافون كاش" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">إرسال</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+    <script>
+        // دالة لتغيير لون الخلفية
+        function changeBackgroundColor() {
+            document.body.style.backgroundColor = 
+                document.body.style.backgroundColor === 'lightblue' ? '#f4f4f4' : 'lightblue';
+        }
+
+        // دالة لبدء الدورة
+        function startCourse(courseName) {
+            alert('تم بدء دورة ' + courseName + '!');
+            changeBackgroundColor(); // تغيير لون الخلفية عند بدء الدورة
+        }
+
+        // دالة لتغيير عنوان الصفحة عند الضغط على "تواصل معنا"
+        document.querySelector('.nav-link[href="#contact"]').addEventListener('click', function() {
+            document.getElementById('main-title').innerText = 'تواصل معنا';
+        });
+
+        // دالة لمعالجة تسجيل الدخول
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // منع إعادة تحميل الصفحة
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            // حفظ بيانات تسجيل الدخول في localStorage
+            localStorage.setItem('userEmail', email);
+            localStorage.setItem('userPassword', password);
+
+            alert('تم تسجيل الدخول باستخدام البريد: ' + email);
+            $('#loginModal').modal('hide'); // إغلاق النافذة المنبثقة
+        });
+
+        // دالة لاسترجاع بيانات تسجيل الدخول عند تحميل الصفحة
+        function displayLoginData() {
+            const userEmail = localStorage.getItem('userEmail');
+            const userPassword = localStorage.getItem('userPassword');
+
+            if (userEmail) {
+                console.log('البريد الإلكتروني:', userEmail);
+            } else {
+                console.log('لا يوجد بريد إلكتروني مخزن.');
+            }
+
+            if (userPassword) {
+                console.log('كلمة المرور:', userPassword);
+            } else {
+                console.log('لا توجد كلمة مرور مخزنة.');
+            }
+        }
+
+        // استدعاء الدالة عند تحميل الصفحة
+        window.onload = function() {
+            displayLoginData();
+        };
+        
+    </script>
+</body>
+</html>
